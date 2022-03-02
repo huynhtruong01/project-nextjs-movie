@@ -4,7 +4,7 @@ import { w500Img } from '../../common'
 
 MovieItem.propTypes = {}
 
-function MovieItem({ movie }) {
+function MovieItem({ movie, type }) {
   return (
     <div className="movie-item">
       <div className="movie-item__img">
@@ -13,7 +13,7 @@ function MovieItem({ movie }) {
           <FaPlay />
         </div>
       </div>
-      <p>{movie.title}</p>
+      <p>{type === 'tv' ? movie.name : movie.title}</p>
     </div>
   )
 }

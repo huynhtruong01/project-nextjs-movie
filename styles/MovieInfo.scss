@@ -1,0 +1,93 @@
+@import './sass/color';
+@import './sass/variables';
+@import './sass/mixin';
+
+.movie-info {
+  padding: $paddingMain;
+
+  &__container {
+    z-index: 4;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+    z-index: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+    z-index: 0;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 70px;
+    z-index: 2;
+
+    h3 {
+      font-size: 48px;
+      line-height: 64px;
+      color: $white;
+    }
+
+    p {
+      color: $grey;
+      line-height: 32px;
+    }
+  }
+
+  &__img {
+    z-index: 4;
+
+    img {
+      width: 400px;
+      border-radius: 14px;
+      margin-right: 70px;
+    }
+  }
+
+  &__content {
+    padding-top: 60px;
+    z-index: 4;
+
+    h3 {
+      font-size: 38px;
+      color: $white;
+      margin-bottom: 25px;
+    }
+
+    p {
+      color: $white;
+      margin-bottom: 15px;
+      width: 700px;
+      line-height: 32px;
+    }
+  }
+
+  &__info-list {
+    margin-bottom: 40px;
+
+    div {
+      margin-right: 20px;
+      color: $white;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+  }
+}

@@ -12,6 +12,7 @@ import '../styles/Main.scss'
 import '../styles/MainTopRating.scss'
 import '../styles/MovieList.scss'
 import '../styles/MovieItem.scss'
+import '../styles/MovieInfo.scss'
 
 function MyApp({ Component, pageProps }) {
   return (

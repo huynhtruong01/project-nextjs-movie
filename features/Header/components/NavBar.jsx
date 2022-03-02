@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { ImSearch } from 'react-icons/im'
@@ -6,8 +6,24 @@ import { ImSearch } from 'react-icons/im'
 NavBar.propTypes = {}
 
 function NavBar(props) {
+  const navbarRef = useRef(null)
+
+  useEffect(() => {
+    const shrinkNavbar = () => {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbarRef.current.classList.add('shrink')
+      } else {
+        navbarRef.current.classList.remove('shrink')
+      }
+    }
+    window.addEventListener('scroll', shrinkNavbar)
+    return () => {
+      window.removeEventListener('scroll', shrinkNavbar)
+    }
+  }, [])
+
   return (
-    <div className="header__navbar">
+    <div className="header__navbar" ref={navbarRef}>
       <div className="wrapper__container flex align-items-center">
         <div className="navbar__home">
           <Link href="/">Watchflix</Link>

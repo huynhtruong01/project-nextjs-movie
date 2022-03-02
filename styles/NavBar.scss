@@ -9,6 +9,11 @@
   height: 80px;
   border-radius: 0 0 25px 25px;
   z-index: 100;
+  transition: .3s ease-in-out;    
+}
+
+.header__navbar.shrink{
+  background: $body-bg;
 }
 
 .navbar {
@@ -54,7 +59,11 @@
         line-height: 24px;
         font-weight: 700;
         color: $primaryColor;
+
+        
       }
+
+
 
       &:hover:before {
         visibility: visible;
