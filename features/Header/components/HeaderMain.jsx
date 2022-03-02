@@ -19,7 +19,7 @@ function HeaderMain(props) {
         )
         const data = await res.json()
 
-        setBackdropList(data.results.slice(0, 5))
+        setBackdropList(data.results.slice(0, 7))
       } catch (error) {
         console.log('Error: ', error)
       }
@@ -45,6 +45,7 @@ function HeaderMain(props) {
           pagination={{ clickable: true }}
           spaceBetween={0}
           slidesPerView={1}
+          loop
         >
           {backdropList.length > 0
             ? backdropList.map((movie) => (

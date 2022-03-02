@@ -8,6 +8,10 @@ import '../styles/Header.scss'
 import '../styles/NavBar.scss'
 import '../styles/HeaderMain.scss'
 import '../styles/Button.scss'
+import '../styles/Main.scss'
+import '../styles/MainTopRating.scss'
+import '../styles/MovieList.scss'
+import '../styles/MovieItem.scss'
 
 function MyApp({ Component, pageProps }) {
   return (

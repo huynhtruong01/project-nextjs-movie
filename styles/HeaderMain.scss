@@ -1,5 +1,5 @@
-@import './sass/color';
-@import './sass/mixin';
+@import './styles/sass/color';
+@import './styles/sass/mixin';
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -66,7 +66,7 @@
 
   &__play {
     position: relative;
-    margin-right: 30px;
+    margin-right: 80px;
   }
 
   &__icon {
@@ -83,37 +83,7 @@
     width: 60px;
     height: 60px;
     z-index: 10;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      width: 100px;
-      height: 100px;
-      background: none;
-      border: 1px solid $grey;
-      border-radius: 50%;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      width: 100px;
-      height: 100px;
-      background: none;
-      border: 1px solid $yellow;
-      border-right-color: transparent;
-      border-radius: 50%;
-    }
-
-    &:hover::after {
-      animation: rotateAround 0.3s ease-in-out infinite -0.5s;
-    }
+    animation: pulse 1.2s ease-in-out infinite;
 
     svg {
       width: 30px;
@@ -144,18 +114,27 @@
     }
   }
 
+  &__content{
+   padding-top:50px;
+    z-index: 12;
+  }
+
   &__title {
     font-size: 5rem;
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.2;
     color: $white;
     margin-bottom: 20px;
   }
 
   &__overview {
+    letter-spacing: 1px;
     color: $white;
     margin-bottom: 30px;
+    font-size: 17px;
     font-weight: 700;
+    width: 750px;
+    line-height: 24px;
   }
 
   &__btns {
@@ -164,8 +143,11 @@
   }
 }
 
-@keyframes rotateAround {
-  100% {
-    transform: translateX(-50%) translateY(-50%) rotate(360deg);
-  }
+@keyframes pulse{
+	0% {
+			box-shadow: 0 0 0 5px $yellow;
+	}
+	100% {
+			box-shadow: 0 0 0 20px transparent;
+	}
 }
