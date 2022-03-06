@@ -48,7 +48,12 @@ function DetailMovie(props) {
                 backgroundImage: `url(${originalImg}${movie.backdrop_path || movie.poster_path})`,
               }}
             ></div>
-            <div className="mb-3 movie-content container">
+            <div
+              className="mb-3 movie-content container"
+              style={{
+                marginBottom: '50px',
+              }}
+            >
               <div className="movie-content__poster">
                 <div
                   className="movie-content__poster__img"

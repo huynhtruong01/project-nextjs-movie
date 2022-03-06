@@ -13,7 +13,7 @@ const navList = [
 
 function NavBar(props) {
   const navbarRef = useRef(null)
-  const [changeNav, setChangeNav] = useState('')
+  
 
   useEffect(() => {
     const shrinkNavbar = () => {
@@ -29,9 +29,7 @@ function NavBar(props) {
     }
   }, [])
 
-  const handleClick = (name) => {
-    setChangeNav(name)
-  }
+  
 
   return (
     <div className="header__navbar" ref={navbarRef}>
@@ -44,8 +42,7 @@ function NavBar(props) {
             {navList.map((nav) => (
               <li
                 key={nav.name}
-                className={`${changeNav === nav.name ? 'active' : ''}`}
-                onClick={() => handleClick(nav.name)}
+                
               >
                 <Link href={nav.path}>{nav.name}</Link>
               </li>

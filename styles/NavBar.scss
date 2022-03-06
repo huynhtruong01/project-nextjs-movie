@@ -34,10 +34,12 @@
   &__link-list {
     margin-right: 150px;
 
+    ul{
+      width: 380px;
+    }
+
     li {
       position: relative;
-
-      
 
       &:not(:last-child) {
         margin-right: 48px;
@@ -57,10 +59,7 @@
         transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
 
-      &.active:before {
-        visibility: visible;
-        transform: scaleX(1);
-      }
+      
 
       a {
         line-height: 24px;

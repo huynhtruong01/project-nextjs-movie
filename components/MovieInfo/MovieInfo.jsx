@@ -69,7 +69,7 @@ function MovieInfo({ category, title, desc }) {
                   </div>
                   <Link href={`/movies/${movie.id}`} passHref={true}>
                     <div>
-                      <Button>Watch now</Button>
+                      <button className="btn">Watch Now</button>
                     </div>
                   </Link>
                 </>
