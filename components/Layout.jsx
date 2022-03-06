@@ -1,14 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Header from '../features/Header'
 import Footer from '../features/Footer'
+import Header from '../features/Header'
+import NavBar from '../features/Header/components/NavBar'
 
 Layout.propTypes = {}
 
 function Layout({ children }) {
   return (
     <div>
-      <Header />
+      <NavBar />
       {children}
       <Footer />
     </div>

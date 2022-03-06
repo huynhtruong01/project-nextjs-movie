@@ -28,20 +28,18 @@ function MovieList({ category, id, type }) {
   return (
     <div className="movie-list">
       <div className="wrapper__container">
-        <div className="movie-list__title">
-          <h3>{`${category[0].toUpperCase()}${category.slice(1).toLowerCase()} ${type}`}</h3>
-          <div className="movie-list__view-more">View More</div>
-        </div>
+        <h2>{`${type[0].toUpperCase()}${type.slice(1).toLowerCase()}`}</h2>
         <Swiper grabCursor={true} spaceBetween={15} slidesPerView={6.5}>
-          {movieList.length > 0
-            ? movieList.map((movie) => (
-                <SwiperSlide key={movie.id}>
-                  <Link href="/movie" passHref>
+          {movieList &&
+            movieList.map((movie) => (
+              <SwiperSlide key={movie.id}>
+                <Link href={`/${type === 'movie' ? 'movies' : 'tv-shows'}/${movie.id}`} passHref>
+                  <div>
                     <MovieItem movie={movie} type={type} />
-                  </Link>
-                </SwiperSlide>
-              ))
-            : ''}
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </div>

@@ -1,7 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import MovieGrid from '../components/MovieGrid'
 import Head from 'next/head'
+import React from 'react'
+import MovieGrid from '../../components/MovieGrid'
 
 Movie.propTypes = {}
 

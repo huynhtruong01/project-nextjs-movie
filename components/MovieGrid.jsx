@@ -3,6 +3,7 @@ import { apiKey } from '../api/apiKey'
 import { OutlineButton } from './Button/Button'
 import Loading from './Loading'
 import MovieItem from './MovieItem/MovieItem'
+import Link from 'next/link'
 
 MovieGrid.propTypes = {}
 
@@ -45,9 +46,15 @@ function MovieGrid({ type = '' }) {
       <div className="movie-grid">
         {productList.length > 0
           ? productList.map((product) => (
-              <div key={product.id}>
-                <MovieItem movie={product} type={type} />
-              </div>
+              <Link
+                href={`/${type === 'movie' ? 'movies' : 'tv-shows'}/${product.id}`}
+                passHref={true}
+                key={product.id}
+              >
+                <div>
+                  <MovieItem movie={product} type={type} />
+                </div>
+              </Link>
             ))
           : ''}
       </div>

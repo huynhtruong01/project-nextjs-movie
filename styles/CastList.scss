@@ -1,0 +1,23 @@
+.casts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 13px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  &-item {
+    &__img {
+      padding-top: 160px;
+      background-size: cover;
+      margin-bottom: 0.5rem;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    &__name {
+      font-size: 0.8rem;
+    }
+  }
+}

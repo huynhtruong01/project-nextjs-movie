@@ -16,6 +16,8 @@ import '../styles/MovieInfo.scss'
 import '../styles/Footer.scss'
 import '../styles/MovieGrid.scss'
 import '../styles/Loading.scss'
+import '../styles/DetailMovie.scss'
+import '../styles/CastList.scss'
 
 function MyApp({ Component, pageProps }) {
   return (

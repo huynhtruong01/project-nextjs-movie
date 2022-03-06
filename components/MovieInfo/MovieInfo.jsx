@@ -67,8 +67,10 @@ function MovieInfo({ category, title, desc }) {
                       <span>{movie.vote_count} views</span>
                     </div>
                   </div>
-                  <Link href="/movie">
-                    <Button>Watch now</Button>
+                  <Link href={`/movies/${movie.id}`} passHref={true}>
+                    <div>
+                      <Button>Watch now</Button>
+                    </div>
                   </Link>
                 </>
               ) : (
