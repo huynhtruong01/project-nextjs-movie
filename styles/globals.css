@@ -41,6 +41,11 @@ img {
   object-fit: cover;
 }
 
+input {
+  outline: none;
+  border: none;
+}
+
 .wrapper__container {
   margin: 0 auto;
   padding: 0 103px;

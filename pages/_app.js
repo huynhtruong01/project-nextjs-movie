@@ -13,6 +13,9 @@ import '../styles/MainTopRating.scss'
 import '../styles/MovieList.scss'
 import '../styles/MovieItem.scss'
 import '../styles/MovieInfo.scss'
+import '../styles/Footer.scss'
+import '../styles/MovieGrid.scss'
+import '../styles/Loading.scss'
 
 function MyApp({ Component, pageProps }) {
   return (

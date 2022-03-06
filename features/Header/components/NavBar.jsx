@@ -1,12 +1,19 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { ImSearch } from 'react-icons/im'
 
 NavBar.propTypes = {}
 
+const navList = [
+  { name: 'Movies', path: '/movies' },
+  { name: 'TV Shows', path: '/tv-shows' },
+  { name: 'Contact', path: '/contact' },
+]
+
 function NavBar(props) {
   const navbarRef = useRef(null)
+  const [changeNav, setChangeNav] = useState('')
 
   useEffect(() => {
     const shrinkNavbar = () => {
@@ -22,6 +29,10 @@ function NavBar(props) {
     }
   }, [])
 
+  const handleClick = (name) => {
+    setChangeNav(name)
+  }
+
   return (
     <div className="header__navbar" ref={navbarRef}>
       <div className="wrapper__container flex align-items-center">
@@ -30,18 +41,15 @@ function NavBar(props) {
         </div>
         <nav className="navbar__link-list">
           <ul>
-            <li>
-              <Link href="/movies">Movies</Link>
-            </li>
-            <li>
-              <Link href="/tvshow">TV Show</Link>
-            </li>
-            <li>
-              <Link href="/video">Video</Link>
-            </li>
-            <li>
-              <Link href="contact">Contact Us</Link>
-            </li>
+            {navList.map((nav) => (
+              <li
+                key={nav.name}
+                className={`${changeNav === nav.name ? 'active' : ''}`}
+                onClick={() => handleClick(nav.name)}
+              >
+                <Link href={nav.path}>{nav.name}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <div className="navbar__features flex align-items-center">

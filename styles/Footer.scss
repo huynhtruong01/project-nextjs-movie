@@ -1,0 +1,129 @@
+@import './sass/color';
+@import './sass/variables';
+
+.footer {
+  background-color: $black;
+  color: $white;
+
+  a {
+    color: $white;
+  }
+
+  &__left {
+    background-color: #3d3d3d;
+
+    &--container {
+      padding: 90px 100px 50px 103px;
+    }
+  }
+
+  &__logo {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 88px;
+    margin-bottom: 32px;
+  }
+
+  p {
+    width: 320px;
+    line-height: 32px;
+    color: #e6e6e6;
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  &__box {
+    position: relative;
+    width: 282px;
+    height: 64px;
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      border-radius: 8px;
+      background-color: #525252;
+      color: #9a9ab0;
+      font-size: 16px;
+      line-height: 32px;
+
+      &::placeholder {
+        color: #9a9ab0;
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      padding: 12px;
+      background-color: $yellow;
+      border-radius: 8px;
+      height: 48px;
+      transition: 0.2s ease-in-out;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        background-color: #f8c806;
+      }
+    }
+  }
+
+  &__right {
+    flex: 1 1 0;
+    background-color: #2e2e2e;
+
+    &--container {
+      padding: 90px 90px 50px 70px;
+    }
+
+    h3 {
+      font-size: 16px;
+      line-height: 24px;
+      color: $white;
+      margin-bottom: 24px;
+    }
+
+    ul {
+      flex-flow: column nowrap;
+
+      li {
+        margin-bottom: 24px;
+
+        a {
+          color: #e6e6e6;
+          font-size: 16px;
+          line-height: 24px;
+          transition: 0.2s ease-in-out;
+        }
+
+        &:hover a {
+          transform: translateX(3px);
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    margin-right: 160px;
+  }
+
+  &__info--item {
+    margin-right: 24px;
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+}

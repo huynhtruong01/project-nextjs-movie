@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Header from '../features/Header'
+import Footer from '../features/Footer'
 
 Layout.propTypes = {}
 
@@ -9,6 +10,7 @@ function Layout({ children }) {
     <div>
       <Header />
       {children}
+      <Footer />
     </div>
   )
 }

@@ -1,0 +1,16 @@
+@import './sass/color';
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  background-color: $black;
+  padding: 0 14px;
+
+  &__loadmore {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: $black;
+  }
+}
