@@ -28,7 +28,12 @@ function MovieList({ category, id, type }) {
   return (
     <div className="movie-list">
       <div className="wrapper__container">
-        <h2>{`${type[0].toUpperCase()}${type.slice(1).toLowerCase()}`}</h2>
+        <div className="movie-list__title flex align-items-center">
+          <h2>{type.toUpperCase()}</h2>
+          <Link href={`/${type === 'movie' ? 'movies' : 'tv-shows'}`} passHref={true}>
+            <div>View More</div>
+          </Link>
+        </div>
         <Swiper grabCursor={true} spaceBetween={15} slidesPerView={6.5}>
           {movieList &&
             movieList.map((movie) => (

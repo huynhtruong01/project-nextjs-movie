@@ -8,12 +8,12 @@ NavBar.propTypes = {}
 const navList = [
   { name: 'Movies', path: '/movies' },
   { name: 'TV Shows', path: '/tv-shows' },
+  { name: 'Top Rated', path: '/top-rated' },
   { name: 'Contact', path: '/contact' },
 ]
 
 function NavBar(props) {
   const navbarRef = useRef(null)
-  
 
   useEffect(() => {
     const shrinkNavbar = () => {
@@ -29,8 +29,6 @@ function NavBar(props) {
     }
   }, [])
 
-  
-
   return (
     <div className="header__navbar" ref={navbarRef}>
       <div className="wrapper__container flex align-items-center">
@@ -40,19 +38,13 @@ function NavBar(props) {
         <nav className="navbar__link-list">
           <ul>
             {navList.map((nav) => (
-              <li
-                key={nav.name}
-                
-              >
+              <li key={nav.name}>
                 <Link href={nav.path}>{nav.name}</Link>
               </li>
             ))}
           </ul>
         </nav>
         <div className="navbar__features flex align-items-center">
-          <button className="navbar__search ">
-            <ImSearch />
-          </button>
           <div className="navbar__auth flex align-items-center">
             <button className="navbar__login">Login</button>
             <button className="navbar__register">Register</button>

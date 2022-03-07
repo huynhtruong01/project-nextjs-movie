@@ -5,6 +5,7 @@ import { apiKey } from '../../../api/apiKey'
 import { originalImg, w500Img } from '../../../common/common'
 import { FaArrowLeft, FaArrowRight, FaPlay } from 'react-icons/fa'
 import Button, { OutlineButton } from '../../../components/Button/Button'
+import Link from 'next/link'
 
 HeaderMain.propTypes = {}
 
@@ -74,7 +75,9 @@ function HeaderMain(props) {
                       <h2 className="header-main__title">{movie.title}</h2>
                       <div className="header-main__overview">{movie.overview}</div>
                       <div className="header-main__btns">
-                        <Button>Watch now</Button>
+                        <Link href={`/movies/${movie.id}`} passHref={true}>
+                          <button className="btn">Watch Now</button>
+                        </Link>
                         <OutlineButton>Watch trailer</OutlineButton>
                       </div>
                     </div>

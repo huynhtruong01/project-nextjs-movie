@@ -1,11 +1,11 @@
-import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { apiKey } from '../../api/apiKey'
 import { originalImg } from '../../common'
 import CastList from '../../components/CastList'
-import MovieList from '../../components/MovieList/MovieList'
+import Head from 'next/head'
 import VideoList from '../../components/VideoList'
+import MovieList from '../../components/MovieList/MovieList'
 
 DetailMovie.propTypes = {}
 
@@ -17,7 +17,7 @@ function DetailMovie(props) {
     ;(async () => {
       try {
         const res = await fetch(
-          `https://api.themoviedb.org/3/movie/${query.id}?api_key=${apiKey}&language=en-US`
+          `https://api.themoviedb.org/3/tv/${query.id}?api_key=${apiKey}&language=en-US`
         )
 
         const data = await res.json()
@@ -30,9 +30,7 @@ function DetailMovie(props) {
     })()
   }, [query.id])
 
-  const handleChangeKeyword = (e) => {
-    setKeyword(e.target.value)
-  }
+  console.log(movie)
 
   return (
     <>
@@ -81,16 +79,16 @@ function DetailMovie(props) {
                   <div className="section__header">
                     <h2>Casts</h2>
                   </div>
-                  <CastList id={movie.id} type="movie" />
+                  <CastList id={movie.id} type="tv" />
                 </div>
               </div>
             </div>
             <div className="container">
               <div className="section mb-3">
-                <VideoList type="movie" id={movie.id} />
+                <VideoList type="tv" id={movie.id} />
               </div>
               <div className="section mb-3">
-                <MovieList category="similar" id={movie.id} type="movie" />
+                <MovieList category="similar" id={movie.id} type="tv" />
               </div>
             </div>
           </>

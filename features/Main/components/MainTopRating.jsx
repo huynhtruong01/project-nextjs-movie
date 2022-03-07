@@ -30,7 +30,7 @@ function MainTopRating(props) {
       <div className="wrapper__container">
         <div className="top-rating__title">
           <h3>Top rating</h3>
-          <Link href="/top-rating">View More</Link>
+          <Link href="/top-rated">View More</Link>
         </div>
         <div className="top-rating__movie-list">
           {movieList.length > 0
@@ -47,7 +47,7 @@ function MainTopRating(props) {
                   }}
                 >
                   <div className="top-rating__play">
-                    <Link href="/movie" passHref={true}>
+                    <Link href={`/movies/${movie.id}`} passHref={true}>
                       <BsPlayCircleFill />
                     </Link>
                   </div>

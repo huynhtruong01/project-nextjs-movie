@@ -18,6 +18,7 @@ import '../styles/MovieGrid.scss'
 import '../styles/Loading.scss'
 import '../styles/DetailMovie.scss'
 import '../styles/CastList.scss'
+import '../styles/Input.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
