@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import {
   handleCheckEmail,
@@ -6,11 +7,13 @@ import {
   handleCheckRetypePassword,
   handleCheckUsername,
 } from '../common/validate'
+import { useUserAuth } from '../context/UserAuthContent'
 import FormItem from './form-controls/FormItem'
 
 Register.propTypes = {}
 
 function Register(props) {
+  const router = useRouter()
   const [valueList, setValueList] = useState({
     username: '',
     email: '',
@@ -24,6 +27,8 @@ function Register(props) {
     errorPassword: '',
     errorRetypePassword: '',
   })
+
+  const { signUp } = useUserAuth()
 
   const handleChangeValue = (objValue) => {
     setValueList((prev) => ({
@@ -43,12 +48,17 @@ function Register(props) {
     return arrSuccess.every((item) => item === true)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     if (!handleCheckValidate()) return
 
-    console.log('Submit')
+    try {
+      await signUp(valueList.email, valueList.password)
+      router.push('/login')
+    } catch (error) {
+      console.log('Error: ', error)
+    }
   }
 
   return (

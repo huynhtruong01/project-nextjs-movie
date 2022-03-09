@@ -6,6 +6,7 @@ import MovieItem from './MovieItem/MovieItem'
 import { toCapitalize } from '../common'
 import Loading from './Loading'
 import { OutlineButton } from './Button/Button'
+import { useUserAuth } from '../context/UserAuthContent'
 
 MovieGridProps.propTypes = {}
 
@@ -18,6 +19,7 @@ function MovieGridProps({
   type = '',
   search = '',
 }) {
+  const { user } = useUserAuth()
   const handleLoadMore = () => {
     if (!onChange) return
 
@@ -38,7 +40,7 @@ function MovieGridProps({
         <div className="movie-grid">
           {movieList.length > 0 &&
             movieList.map((movie, index) => (
-              <Link href={`/${type}/${movie.id}`} key={index} passHref={true}>
+              <Link href={user ? `/${type}/${movie.id}` : '/login'} key={index} passHref={true}>
                 <div>
                   <MovieItem movie={movie} type="movie" />
                 </div>

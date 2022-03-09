@@ -1,16 +1,16 @@
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
-import { apiKey } from '../../api/apiKey'
-import { originalImg } from '../../common'
 import { AiFillStar } from 'react-icons/ai'
 import { FaUserAlt } from 'react-icons/fa'
-import Button from '../Button/Button'
-import Link from 'next/link'
+import { apiKey } from '../../api/apiKey'
+import { originalImg } from '../../common'
+import { useUserAuth } from '../../context/UserAuthContent'
 
 MovieInfo.propTypes = {}
 
 function MovieInfo({ category, title, desc }) {
   const [movie, setMovie] = useState(null)
+  const { user } = useUserAuth()
 
   useEffect(() => {
     ;(async () => {
@@ -67,7 +67,7 @@ function MovieInfo({ category, title, desc }) {
                       <span>{movie.vote_count} views</span>
                     </div>
                   </div>
-                  <Link href={`/movies/${movie.id}`} passHref={true}>
+                  <Link href={user ? `/movies/${movie.id}` : '/login'} passHref={true}>
                     <div>
                       <button className="btn">Watch Now</button>
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
+import { UserAuthContextProvider } from '../context/UserAuthContent'
 import Footer from '../features/Footer'
-import Header from '../features/Header'
 import NavBar from '../features/Header/components/NavBar'
 
 Layout.propTypes = {}
@@ -8,9 +8,11 @@ Layout.propTypes = {}
 function Layout({ children }) {
   return (
     <div>
-      <NavBar />
-      {children}
-      <Footer />
+      <UserAuthContextProvider>
+        <NavBar />
+        {children}
+        <Footer />
+      </UserAuthContextProvider>
     </div>
   )
 }

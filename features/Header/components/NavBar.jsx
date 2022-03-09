@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { ImSearch } from 'react-icons/im'
+import { useUserAuth } from '../../../context/UserAuthContent'
+import HeaderAccount from './HeaderAccount'
 
 NavBar.propTypes = {}
 
@@ -14,6 +16,10 @@ const navList = [
 
 function NavBar(props) {
   const navbarRef = useRef(null)
+
+  const { user } = useUserAuth()
+
+  console.log(user)
 
   useEffect(() => {
     const shrinkNavbar = () => {
@@ -44,16 +50,20 @@ function NavBar(props) {
             ))}
           </ul>
         </nav>
-        <div className="navbar__features flex align-items-center">
-          <div className="navbar__auth flex align-items-center">
-            <Link href="/login" passHref={true}>
-              <button className="navbar__login">Login</button>
-            </Link>
-            <Link href="/register" passHref={true}>
-              <button className="navbar__register">Register</button>
-            </Link>
+        {!user ? (
+          <div className="navbar__features flex align-items-center">
+            <div className="navbar__auth flex align-items-center">
+              <Link href="/login" passHref={true}>
+                <button className="navbar__login">Login</button>
+              </Link>
+              <Link href="/register" passHref={true}>
+                <button className="navbar__register">Register</button>
+              </Link>
+            </div>
           </div>
-        </div>
+        ) : (
+          <HeaderAccount />
+        )}
       </div>
     </div>
   )

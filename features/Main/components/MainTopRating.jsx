@@ -5,10 +5,12 @@ import { BsPlayCircleFill } from 'react-icons/bs'
 import { FaUserAlt } from 'react-icons/fa'
 import { apiKey } from '../../../api/apiKey'
 import { originalImg } from '../../../common/index'
+import { useUserAuth } from '../../../context/UserAuthContent'
 MainTopRating.propTypes = {}
 
 function MainTopRating(props) {
   const [movieList, setMovieList] = useState([])
+  const { user } = useUserAuth()
 
   useEffect(() => {
     ;(async () => {
@@ -47,7 +49,7 @@ function MainTopRating(props) {
                   }}
                 >
                   <div className="top-rating__play">
-                    <Link href={`/movies/${movie.id}`} passHref={true}>
+                    <Link href={user ? `/movies/${movie.id}` : '/login'} passHref={true}>
                       <BsPlayCircleFill />
                     </Link>
                   </div>

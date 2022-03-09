@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { apiKey } from '../api/apiKey'
+import { useUserAuth } from '../context/UserAuthContent'
 import { OutlineButton } from './Button/Button'
 import Input from './Input'
 import Loading from './Loading'
@@ -14,6 +15,7 @@ function MovieGrid({ type = '', category = '' }) {
   const [totalPages, setTotalPages] = useState(0)
   const [page, setPage] = useState(1)
   const [keyword, setKeyword] = useState('')
+  const { user } = useUserAuth()
 
   useEffect(() => {
     const getMovie = async () => {
@@ -85,7 +87,9 @@ function MovieGrid({ type = '', category = '' }) {
         {productList.length > 0
           ? productList.map((product, index) => (
               <Link
-                href={`/${type === 'movie' ? 'movies' : 'tv-shows'}/${product.id}`}
+                href={
+                  user ? `/${type === 'movie' ? 'movies' : 'tv-shows'}/${product.id}` : '/login'
+                }
                 passHref={true}
                 key={index}
               >

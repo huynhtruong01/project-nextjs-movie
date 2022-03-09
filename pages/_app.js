@@ -21,6 +21,7 @@ import '../styles/CastList.scss'
 import '../styles/Input.scss'
 import '../styles/FormLogin.scss'
 import '../styles/FormItem.scss'
+import '../styles/HeaderAccount.scss'
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -2,12 +2,14 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { apiKey } from '../../api/apiKey'
+import { useUserAuth } from '../../context/UserAuthContent'
 import MovieItem from '../MovieItem/MovieItem'
 
 MovieList.propTypes = {}
 
 function MovieList({ category, id, type }) {
   const [movieList, setMovieList] = useState([])
+  const { user } = useUserAuth()
 
   useEffect(() => {
     ;(async () => {
@@ -38,7 +40,12 @@ function MovieList({ category, id, type }) {
           {movieList &&
             movieList.map((movie) => (
               <SwiperSlide key={movie.id}>
-                <Link href={`/${type === 'movie' ? 'movies' : 'tv-shows'}/${movie.id}`} passHref>
+                <Link
+                  href={
+                    user ? `/${type === 'movie' ? 'movies' : 'tv-shows'}/${movie.id}` : '/login'
+                  }
+                  passHref
+                >
                   <div>
                     <MovieItem movie={movie} type={type} />
                   </div>
