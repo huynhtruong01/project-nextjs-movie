@@ -1,16 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Login from '../components/Login'
+import Head from 'next/head'
 
 FormLogin.propTypes = {}
 
 function FormLogin(props) {
   return (
-    <div className="form-login">
-      <div className="form-container">
-        <Login />
+    <>
+      <Head>
+        <title>Register</title>
+      </Head>
+      <div className="form form-login">
+        <div className="form-container">
+          <Login />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

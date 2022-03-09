@@ -1,16 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Register from '../components/Register'
+import Head from 'next/head'
 
 FormRegister.propTypes = {}
 
 function FormRegister(props) {
   return (
-    <div className="form-login">
-      <div className="form-container">
-        <Register />
+    <>
+      <Head>
+        <title>Register</title>
+      </Head>
+      <div className="form form-register">
+        <div className="form-container">
+          <Register />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -2,13 +2,16 @@
 
 .form {
   &-item {
+    margin-bottom: 20px;
+  }
+
+  &-item__container {
     position: relative;
     width: 100%;
     padding: 14px;
     border-radius: 5px;
     border: 2px solid $body-bg;
     height: 55px;
-    margin-bottom: 25px;
   }
 
   &-input {
@@ -20,12 +23,11 @@
     padding: 15px;
     font-size: 1rem;
     font-weight: 500;
+    border-radius: 5px;
     color: $body-bg;
 
-    &:focus + .form-label {
-      left: 10px;
-      top: -7%;
-      font-size: 0.8rem;
+    &::placeholder {
+      color: transparent;
     }
   }
 
@@ -34,12 +36,18 @@
     top: 50%;
     left: 15px;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     color: $body-bg;
     padding: 0 5px;
     background-color: $white;
     transform: translateY(-50%);
     transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  &-error {
+    margin-top: 5px;
+    margin-left: 3px;
+    color: #d72323;
   }
 }
 
