@@ -19,6 +19,8 @@ import '../styles/Loading.scss'
 import '../styles/DetailMovie.scss'
 import '../styles/CastList.scss'
 import '../styles/Input.scss'
+import '../styles/FormLogin.scss'
+import '../styles/FormItem.scss'
 
 function MyApp({ Component, pageProps }) {
   return (

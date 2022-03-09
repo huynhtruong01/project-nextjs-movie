@@ -1,0 +1,59 @@
+@use './sass/color' as *;
+
+.form {
+  &-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $body-bg;
+    height: 100vh;
+  }
+
+  &-container {
+    width: 500px;
+    padding: 40px;
+    border-radius: 5px;
+    background-color: $white;
+  }
+
+  &-title {
+    margin-bottom: 40px;
+    text-align: center;
+    color: $body-bg;
+    font-size: 35px;
+  }
+
+  &-btn__submit {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: $yellow;
+    color: $body-bg;
+    border-radius: 5px;
+    padding: 10px 0;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      background-color: $hoverYellow;
+    }
+  }
+
+  &-link__register {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: $grey;
+
+    a {
+      margin-left: 5px;
+      color: $yellow;
+      font-weight: 600;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        color: $hoverYellow;
+      }
+    }
+  }
+}

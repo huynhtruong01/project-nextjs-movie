@@ -46,8 +46,12 @@ function NavBar(props) {
         </nav>
         <div className="navbar__features flex align-items-center">
           <div className="navbar__auth flex align-items-center">
-            <button className="navbar__login">Login</button>
-            <button className="navbar__register">Register</button>
+            <Link href="/login" passHref={true}>
+              <button className="navbar__login">Login</button>
+            </Link>
+            <Link href="/register" passHref={true}>
+              <button className="navbar__register">Register</button>
+            </Link>
           </div>
         </div>
       </div>

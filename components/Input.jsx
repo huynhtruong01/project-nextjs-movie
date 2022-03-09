@@ -10,6 +10,7 @@ function Input({ placeholder = '', onChange = null, value = '' }) {
         placeholder={placeholder}
         value={value}
         onChange={onChange ? (e) => onChange(e) : null}
+        className="input"
       />
     </div>
   )
