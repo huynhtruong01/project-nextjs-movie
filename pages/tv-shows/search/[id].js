@@ -45,6 +45,7 @@ function SearchMovie(props) {
         totalPages={totalPages}
         page={page}
         type="tv"
+        path="tv-shows"
         search={query.id}
         onChange={handleClick}
       />

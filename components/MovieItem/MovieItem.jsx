@@ -20,7 +20,7 @@ function MovieItem({ movie = {}, type = 'movie' }) {
           <FaPlay />
         </div>
       </div>
-      <p>{type === 'tv' ? movie.name : movie.title}</p>
+      <p>{movie.name || movie.title}</p>
     </div>
   )
 }

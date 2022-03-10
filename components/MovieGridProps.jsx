@@ -18,6 +18,7 @@ function MovieGridProps({
   onChange = null,
   type = '',
   search = '',
+  path = '',
 }) {
   const { user } = useUserAuth()
   const handleLoadMore = () => {
@@ -40,7 +41,7 @@ function MovieGridProps({
         <div className="movie-grid">
           {movieList.length > 0 &&
             movieList.map((movie, index) => (
-              <Link href={user ? `/${type}/${movie.id}` : '/login'} key={index} passHref={true}>
+              <Link href={user ? `/${path}/${movie.id}` : '/login'} key={index} passHref={true}>
                 <div>
                   <MovieItem movie={movie} type="movie" />
                 </div>

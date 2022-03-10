@@ -49,6 +49,7 @@ function SearchMovie(props) {
         type="movies"
         search={query.id}
         onChange={handleClick}
+        path="movies"
       />
     </div>
   )
