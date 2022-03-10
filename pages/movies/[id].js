@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { apiKey } from '../../api/apiKey'
 import { originalImg } from '../../common'
 import CastList from '../../components/CastList'
 import MovieList from '../../components/MovieList/MovieList'
 import VideoList from '../../components/VideoList'
+import { apiKey } from '../../configApi/apiKey'
 
 DetailMovie.propTypes = {}
 

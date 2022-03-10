@@ -58,6 +58,7 @@
 
   &__img {
     z-index: 4;
+    margin-right: 110px;
 
     img {
       width: 400px;
@@ -85,10 +86,15 @@
   }
 
   &__info-list {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 
-    div {
+    &.flex {
+      margin-top: 20px;
+    }
+
+    div.flex {
       margin-right: 20px;
+      margin-top: 0;
       color: $white;
     }
 
