@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import { apiKey } from '../api/apiKey'
+import { apiKey } from '../configApi/apiKey'
 
 VideoList.propTypes = {}
 

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { apiKey } from '../../../api/apiKey'
 import { originalImg, w500Img } from '../../../common/common'
 import { FaArrowLeft, FaArrowRight, FaPlay } from 'react-icons/fa'
 import Button, { OutlineButton } from '../../../components/Button/Button'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useUserAuth } from '../../../context/UserAuthContent'
+import { apiKey } from '../../../configApi/apiKey'
 
 HeaderMain.propTypes = {}
 

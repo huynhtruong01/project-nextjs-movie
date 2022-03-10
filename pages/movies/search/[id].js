@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { apiKey } from '../../../api/apiKey'
+import { apiKey } from '../../../configApi/apiKey'
 import MovieGridProps from '../../../components/MovieGridProps'
 import Head from 'next/head'
 

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { apiKey } from '../api/apiKey'
+import { apiKey } from '../configApi/apiKey'
 import { useUserAuth } from '../context/UserAuthContent'
 import { OutlineButton } from './Button/Button'
 import Input from './Input'

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { apiKey } from '../../api/apiKey'
+import { apiKey } from '../../configApi/apiKey'
 import { useUserAuth } from '../../context/UserAuthContent'
 import MovieItem from '../MovieItem/MovieItem'
 

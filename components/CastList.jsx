@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { apiKey } from '../api/apiKey'
+import { apiKey } from '../configApi/apiKey'
 import { originalImg } from '../common'
 
 CastList.propTypes = {}

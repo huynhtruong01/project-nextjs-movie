@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { BsPlayCircleFill } from 'react-icons/bs'
 import { FaUserAlt } from 'react-icons/fa'
-import { apiKey } from '../../../api/apiKey'
 import { originalImg } from '../../../common/index'
+import { apiKey } from '../../../configApi/apiKey'
 import { useUserAuth } from '../../../context/UserAuthContent'
 MainTopRating.propTypes = {}
 
