@@ -51,38 +51,6 @@ function MovieGrid({ type = '', category = '' }) {
 
   return (
     <>
-      <div
-        className="flex"
-        style={{
-          position: 'relative',
-          width: '280px',
-          height: '47px',
-          marginBottom: '40px',
-          marginLeft: '20px',
-        }}
-      >
-        <Input placeholder="Enter movie" onChange={handleChangeKeyword} value={keyword} />
-        <button
-          style={{
-            position: 'absolute',
-            right: '7px',
-            top: '7px',
-            background: '#ff0000',
-            color: '#fff',
-          }}
-        >
-          <Link
-            href={
-              keyword
-                ? `/${type === 'movie' ? 'movies' : 'tv-shows'}/search/${keyword}`
-                : `/${type === 'movie' ? 'movies' : 'tv-shows'}`
-            }
-            passHref={true}
-          >
-            <span>Search</span>
-          </Link>
-        </button>
-      </div>
       <div className="movie-grid">
         {productList.length > 0
           ? productList.map((product, index) => (

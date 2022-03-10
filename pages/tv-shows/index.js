@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import MovieGrid from '../../components/MovieGrid'
+import SearchTV from './search'
 
 TVShows.propTypes = {}
 
@@ -24,6 +25,7 @@ function TVShows(props) {
         >
           TV SHOWS
         </h3>
+        <SearchTV />
         <MovieGrid type="tv" category="popular" />
       </div>
     </div>

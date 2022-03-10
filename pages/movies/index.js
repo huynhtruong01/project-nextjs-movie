@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import MovieGrid from '../../components/MovieGrid'
+import SearchMovie from './search'
 
 Movie.propTypes = {}
 
@@ -30,6 +31,7 @@ function Movie() {
         >
           MOVIES
         </h3>
+        <SearchMovie />
         <MovieGrid type="movie" category="popular" />
       </div>
     </div>

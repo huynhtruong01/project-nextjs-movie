@@ -29,12 +29,12 @@ function MovieGridProps({
   return (
     <>
       <Head>
-        <title>Search: {toCapitalize(search)}</title>
+        <title>Search: {search && toCapitalize(search)}</title>
       </Head>
       <div className="container bg-black p-110-0">
         <div className="movie-title p-0-14 mb-40">
           <h2 style={{ color: '#fff', fontSize: '2rem' }}>
-            Search: <span>{toCapitalize(search)}</span>
+            Search: <span>{search && toCapitalize(search)}</span>
           </h2>
         </div>
         <div className="movie-grid">

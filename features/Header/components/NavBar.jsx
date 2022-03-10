@@ -19,8 +19,6 @@ function NavBar(props) {
 
   const { user } = useUserAuth()
 
-  console.log(user)
-
   useEffect(() => {
     const shrinkNavbar = () => {
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {

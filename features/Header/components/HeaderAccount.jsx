@@ -17,8 +17,6 @@ function HeaderAccount(props) {
     await logOut()
   }
 
-  console.log(active)
-
   return (
     <div className="header__account">
       <div className="header__account--img" onClick={handleActive}>

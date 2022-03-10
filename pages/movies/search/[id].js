@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { apiKey } from '../../../configApi/apiKey'
 import MovieGridProps from '../../../components/MovieGridProps'
-import Head from 'next/head'
+import { apiKey } from '../../../configApi/apiKey'
 
 SearchMovie.propTypes = {}
 
@@ -12,6 +11,8 @@ function SearchMovie(props) {
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(0)
   const [loading, setLoading] = useState(false)
+
+  console.log(query)
 
   useEffect(() => {
     ;(async () => {

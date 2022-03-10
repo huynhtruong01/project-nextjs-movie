@@ -31,7 +31,7 @@ function MovieList({ category = 'popular', id = 0, type = 'movie' }) {
     <div className="movie-list">
       <div className="wrapper__container">
         <div className="movie-list__title flex align-items-center">
-          <h2>{type.toUpperCase()}</h2>
+          <h2>{type && type.toUpperCase()}</h2>
           <Link href={`/${type === 'movie' ? 'movies' : 'tv-shows'}`} passHref={true}>
             <div>View More</div>
           </Link>
