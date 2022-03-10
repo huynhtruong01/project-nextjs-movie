@@ -22,7 +22,7 @@ function CastList({ id = 0, type = '' }) {
         console.log('Error: ', error)
       }
     })()
-  }, [id])
+  }, [id, type])
 
   return (
     <div className="casts">

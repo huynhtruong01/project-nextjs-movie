@@ -4,7 +4,7 @@ import { apiKey } from '../api/apiKey'
 
 VideoList.propTypes = {}
 
-function VideoList({ type = '', id = 0 }) {
+function VideoList({ type = 'movie', id = 0 }) {
   const [videos, setVideos] = useState([])
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function VideoList({ type = '', id = 0 }) {
         console.log('Error: ', error)
       }
     })()
-  }, [id])
+  }, [type, id])
 
   console.log(videos)
 

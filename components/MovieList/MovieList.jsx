@@ -25,7 +25,7 @@ function MovieList({ category = 'popular', id = 0, type = 'movie' }) {
         console.log('Error: ', error)
       }
     })()
-  }, [])
+  }, [category, id, type])
 
   return (
     <div className="movie-list">

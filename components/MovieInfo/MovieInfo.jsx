@@ -5,10 +5,11 @@ import { FaUserAlt } from 'react-icons/fa'
 import { apiKey } from '../../api/apiKey'
 import { originalImg } from '../../common'
 import { useUserAuth } from '../../context/UserAuthContent'
+import Image from 'next/image'
 
 MovieInfo.propTypes = {}
 
-function MovieInfo({ category, title, desc }) {
+function MovieInfo({ category = 'popular', title = '', desc = '' }) {
   const [movie, setMovie] = useState(null)
   const { user } = useUserAuth()
 
@@ -25,7 +26,7 @@ function MovieInfo({ category, title, desc }) {
         console.log('Error: ', error)
       }
     })()
-  }, [])
+  }, [category])
 
   return (
     <div
@@ -50,7 +51,17 @@ function MovieInfo({ category, title, desc }) {
           </div>
           <div className="flex">
             <div className="movie-info__img">
-              {!movie ? '' : <img src={`${originalImg}${movie.poster_path}`} alt={movie.title} />}
+              {!movie ? (
+                ''
+              ) : (
+                <Image
+                  src={`${originalImg}${movie.poster_path}`}
+                  alt={movie.title}
+                  width="300px"
+                  height="450px"
+                  loading="lazy"
+                />
+              )}
             </div>
             <div className="movie-info__content">
               {movie ? (

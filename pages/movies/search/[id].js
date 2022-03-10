@@ -32,7 +32,7 @@ function SearchMovie(props) {
 
       setLoading(false)
     })()
-  }, [page])
+  }, [page, query?.id])
 
   const handleClick = (page) => {
     setPage(page)

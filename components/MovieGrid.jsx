@@ -39,7 +39,7 @@ function MovieGrid({ type = '', category = '' }) {
     }
 
     getMovie()
-  }, [page])
+  }, [page, category, type])
 
   const handleLoadMore = () => {
     setPage(page + 1)

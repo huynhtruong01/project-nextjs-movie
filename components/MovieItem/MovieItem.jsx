@@ -5,7 +5,7 @@ import { w500Img } from '../../common'
 
 MovieItem.propTypes = {}
 
-function MovieItem({ movie, type }) {
+function MovieItem({ movie = {}, type = 'movie' }) {
   return (
     <div className="movie-item">
       <div className="movie-item__img">
