@@ -7,7 +7,7 @@ import MovieItem from '../MovieItem/MovieItem'
 
 MovieList.propTypes = {}
 
-function MovieList({ category, id, type }) {
+function MovieList({ category = 'popular', id = 0, type = 'movie' }) {
   const [movieList, setMovieList] = useState([])
   const { user } = useUserAuth()
 

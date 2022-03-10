@@ -17,7 +17,7 @@ function DetailMovie(props) {
     ;(async () => {
       try {
         const res = await fetch(
-          `https://api.themoviedb.org/3/movie/${query.id}?api_key=${apiKey}&language=en-US`
+          `https://api.themoviedb.org/3/movie/${query?.id}?api_key=${apiKey}&language=en-US`
         )
 
         const data = await res.json()
@@ -28,7 +28,7 @@ function DetailMovie(props) {
         console.log('Error: ', error)
       }
     })()
-  }, [query.id])
+  }, [query?.id])
 
   const handleChangeKeyword = (e) => {
     setKeyword(e.target.value)
@@ -81,13 +81,13 @@ function DetailMovie(props) {
                   <div className="section__header">
                     <h2>Casts</h2>
                   </div>
-                  <CastList id={movie.id} type="movie" />
+                  <CastList id={query?.id} type="movie" />
                 </div>
               </div>
             </div>
             <div className="container">
               <div className="section mb-3">
-                <VideoList type="movie" id={movie.id} />
+                <VideoList id={query?.id} type="movie" />
               </div>
               <div className="section mb-3">
                 <MovieList category="similar" id={movie.id} type="movie" />
