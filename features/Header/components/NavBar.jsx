@@ -11,7 +11,6 @@ const navList = [
   { name: 'Movies', path: '/movies' },
   { name: 'TV Shows', path: '/tv-shows' },
   { name: 'Top Rated', path: '/top-rated' },
-  { name: 'Contact', path: '/contact' },
 ]
 
 function NavBar(props) {
